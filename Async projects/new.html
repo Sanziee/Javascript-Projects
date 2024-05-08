@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script</title>
+</head>
+<body>
+    <h1>SanZiee Code 2</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+        const sayDate = function(str){
+            console.log(str ,Date.now());
+        }
+        let intervalID
+        document.querySelector('#start').addEventListener('click',function(){
+            if(intervalID){
+                clearInterval(intervalID)
+            }
+            console.log("Started");
+            intervalID=setInterval(sayDate,1000,"Hi")
+        })
+        document.querySelector('#stop').addEventListener('click',function(){
+            if(intervalID){
+            clearInterval(intervalID)
+            intervalID = undefined;
+        }
+        
+            console.log("Stopped");
+        })
+        
+    </script>
+</body>
+</html>
